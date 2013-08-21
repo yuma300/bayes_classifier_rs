@@ -1,4 +1,4 @@
-class Create<%= class_name %>ClassifierCategories < ActiveRecord::Migration
+class Create<%= class_name %>BayesClassifierCategories < ActiveRecord::Migration
   def change
     create_table :<%= "#{file_name}_classifier_categories".pluralize %> do |t|
       t.string :name
