@@ -1,0 +1,29 @@
+<h1>Listing bayes_classifier_words</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bayes classifier category</th>
+      <th>Words</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bayes_classifier_words.each do |bayes_classifier_word| %>
+      <tr>
+        <td><%= bayes_classifier_word.bayes_classifier_category_id %></td>
+        <td><%= bayes_classifier_word.words %></td>
+        <td><%= link_to 'Show', bayes_classifier_word %></td>
+        <td><%= link_to 'Edit', edit_bayes_classifier_word_path(bayes_classifier_word) %></td>
+        <td><%= link_to 'Destroy', bayes_classifier_word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bayes classifier word', new_bayes_classifier_word_path %>

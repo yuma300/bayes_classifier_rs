@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bayes classifier category:</strong>
+  <%= @bayes_classifier_word.bayes_classifier_category_id %>
+</p>
+
+<p>
+  <strong>Words:</strong>
+  <%= @bayes_classifier_word.words %>
+</p>
+
+<%= link_to 'Edit', edit_bayes_classifier_word_path(@bayes_classifier_word) %> |
+<%= link_to 'Back', bayes_classifier_words_path %>

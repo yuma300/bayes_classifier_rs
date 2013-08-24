@@ -1,0 +1,25 @@
+<%= form_for(@bayes_classifier_word) do |f| %>
+  <% if @bayes_classifier_word.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bayes_classifier_word.errors.count, "error") %> prohibited this bayes_classifier_word from being saved:</h2>
+
+      <ul>
+      <% @bayes_classifier_word.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :bayes_classifier_category_id %><br>
+    <%= f.number_field :bayes_classifier_category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :words %><br>
+    <%= f.text_field :words %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
