@@ -38,7 +38,7 @@ class <%= class_name %>BayesClassifierWordsController < ApplicationController
   # POST /bayes_classifier_words
   # POST /bayes_classifier_words.json
   def create
-    @bayes_classifier_word = <%= class_name %>BayesClassifierWord.new(params[:bayes_classifier_word])
+    @bayes_classifier_word = <%= class_name %>BayesClassifierWord.new(params[:<%= "#{file_name}" %>_bayes_classifier_word])
 
     respond_to do |format|
       if @bayes_classifier_word.save
@@ -57,7 +57,7 @@ class <%= class_name %>BayesClassifierWordsController < ApplicationController
     @bayes_classifier_word = <%= class_name %>BayesClassifierWord.find(params[:id])
 
     respond_to do |format|
-      if @bayes_classifier_word.update_attributes(params[:bayes_classifier_word])
+      if @bayes_classifier_word.update_attributes(params[:<%= "#{file_name}" %>_bayes_classifier_word])
         format.html { redirect_to @bayes_classifier_word, notice: 'BayesClassifierWord was successfully updated.' }
         format.json { head :no_content }
       else
@@ -74,7 +74,7 @@ class <%= class_name %>BayesClassifierWordsController < ApplicationController
     @bayes_classifier_word.destroy
 
     respond_to do |format|
-      format.html { redirect_to bayes_classifier_words_url }
+      format.html { redirect_to <%= "#{file_name}" %>_bayes_classifier_words_url }
       format.json { head :no_content }
     end
   end
